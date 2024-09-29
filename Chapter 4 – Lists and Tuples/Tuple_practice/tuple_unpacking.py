@@ -15,5 +15,4 @@ print(type(c))
 new_tuple = (10, 20, 30, 40, 50)
 
 x , y , *new_rest= new_tuple
-print(rest)
-
+print(new_rest)
