@@ -13,7 +13,9 @@ inventory = {
     "chocolate" : 10
 }
 
+
 grape_quantity = inventory.get("grapes" , 0) #if that key is not found , 0 is the default value which will be displayed , it can be anything like below 
+
 
 guava_quantity = inventory.get("guava" , "not found") #here the default value is -> not found
 
