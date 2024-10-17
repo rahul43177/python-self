@@ -48,7 +48,7 @@ print('Unique elements as list:', unique_list)
 
 my_set = {1,2,3,4,5,6,7,7}
 print("the set" , set)
-s
+
 list_from_set = list(my_set)
 print('➡ Python-Basics/list.py:53 list_from_set:', list_from_set)
 
