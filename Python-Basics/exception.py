@@ -78,3 +78,31 @@ try :
     print(check_age(1))
 except ValueError as e :
     print(f"error is {e}")
+
+
+
+def find_valid_age(age):
+    print(f"The age of the user is {age}")
+    if age < 0:
+        raise ValueError("The age not be negative")
+    if type(age) != int:
+        raise TypeError("Please enter a valid age")
+    
+    if age < 18:
+        return f"The user has a valid age to vote -> {age}"
+    else :
+        return f"The user does not have a valid age -> {age}"
+    
+    
+
+try :
+    (find_valid_age("19"))
+except ValueError as e :
+    print(f"error : {e}")
+except TypeError as ee :
+    print(f"error : {ee}")
+
+
+    
+            
+            
