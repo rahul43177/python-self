@@ -1,17 +1,27 @@
-class Car :
-    def __init__(self , color , mileage):
-        self.color = color
-        self.mileage = mileage
-
+class Employee : 
+    def __init__(self , name ,age , salary , gender) :
+        self.name = name
+        self.age = age
+        self.salary = salary
+        self.gender = gender
     def description(self):
-        return f"The {self.color} car has {self.mileage} kms"
+        gender = self.gender.lower() 
+        statement = ""
+        if gender == "male" :
+            statement = "he"
+        else :
+            statement = "she"
+        
+        return f"{self.name} is {self.age} years old , and {statement} is earning {self.salary}" 
+    
     def __str__(self):
-        return f"The {self.color} car has {self.mileage} kms"
+        return (f"The class for Employees")
 
 
-car1 = Car("Blue" , 2000)
-car2 = Car("Red" , 5000)
-print(car1)
-print(car2)
-print(car1.description())
-print(car2.description())
+
+rahul = Employee("Rahul Mishra" , 24 , 700000 , "Male")
+muskan = Employee("Muskan Acharya" , 24 , 800000 , "Female")
+
+
+print(rahul.description())
+print(muskan.description())
