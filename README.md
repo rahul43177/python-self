@@ -33,4 +33,4 @@ Resource - https://roadmap.sh/python
     - Dunder
 - Package Managers
     - Poetry
-    - 
+      
