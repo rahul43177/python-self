@@ -31,3 +31,5 @@ Resource - https://roadmap.sh/python
     - Inheritance 
     - Methods in Class 
     - Dunder
+- Package Managers
+    - Poetry 
