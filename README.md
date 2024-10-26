@@ -32,4 +32,5 @@ Resource - https://roadmap.sh/python
     - Methods in Class 
     - Dunder
 - Package Managers
-    - Poetry 
+    - Poetry
+    - 
