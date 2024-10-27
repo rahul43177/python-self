@@ -15,3 +15,7 @@ result2 = number3+number4
 print(f"The result from result - {result} and result2 is {result2}")
 
 print("These are dunders -> which are double underscore")
+
+print("This is my vs code theme - github something is there , and my font is -> getbrains mono bold")
+
+print("This is little bit bold than the regular one")
