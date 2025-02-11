@@ -15,3 +15,5 @@ print(car1)
 print(car2)
 print(car1.description())
 print(car2.description())
+
+print("Car")
