@@ -6,5 +6,17 @@ bill = [13.99, 28.75, 9.99, 9.99, 6.95, 7.45, 16.45, 16.45]
 Using this bill list, calculate the total amount and then divide it four ways.
 Initialize the total with zero and loop through the bill list to add everything up.
 With the total, store what each person has to pay in a my_share variable and then print the result to the terminal.
-
 """
+
+bill = [13.99, 28.75, 9.99, 9.99, 6.95, 7.45, 16.45, 16.45]
+
+total = 0.0
+
+for val in bill :
+    print(val)
+    total += val
+
+my_share = total / 4
+print(f"Split is : {my_share}")
+
+
