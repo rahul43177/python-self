@@ -15,9 +15,10 @@ Task: Write a FastAPI app with two endpoints.
 
 Write the code for these two endpoints! ✍️
 """
+from pyexpat.errors import messages
 
-from fastapi import FastAPI
-from pydantic import BaseModel , Field
+from fastapi import FastAPI , HTTPException
+from pydantic import BaseModel
 app = FastAPI()
 
 @app.get("/")
@@ -64,8 +65,59 @@ async def get_books(book_id : int) :
     for book in books_db:
         if book["id"] == book_id:
             return book
+    raise HTTPException(status_code=404 , detail="Book not found")
+
+## POST Request to create a new book
+## BODY Pydantic Model
+# In FastAPI -- we send all the things like body and all in the function paramaters itself -- it is there
+class Book(BaseModel):
+    id : int
+    title : str
+    author : str
+    price : float
+
+
+@app.post("/book")
+async def create_book(book : Book):
+    book_data =  book.model_dump()
+    books_db.append(book_data)
     return {
-        "message" : "Book not found!"
+        "message" : "Book added successfully" ,
+        "book_details" : book_data ,
+        "entire_books_database" : books_db
+    }
+
+
+
+## PUT
+@app.put("/books/{book_id}")
+async def update_book(book_id : int , updated_book_data : Book) :
+    for index , book in enumerate(books_db):
+        if book["id"] == book_id :
+            book.update(updated_book_data.model_dump())
+
+            return {
+                "message": "The book has been updated.",
+                "updated_book": updated_book_data,
+                "entire_database": books_db
+            }
+    return {
+        "message":"Book not found!" ,
+        "find_books_below" : books_db
+    }
+
+
+@app.delete("/books/{book_id}")
+async def delete_book(book_id : int):
+    for index , book in enumerate(books_db):
+        if book["id"] == book_id :
+            books_db.pop(index)
+            return {
+                "message" : "Book removed" ,
+                "books_removed" : book
+            }
+    return {
+        "Message" : "Book not found!"
     }
 
 
