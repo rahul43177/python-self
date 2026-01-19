@@ -1,6 +1,5 @@
 from fastapi import APIRouter , HTTPException
-from schemas import Book 
-
+from schemas import Book
 router = APIRouter()
 
 # In-memory database
@@ -50,7 +49,7 @@ async def get_books(book_id : int) :
 @router.post("/book")
 async def create_book(book : Book):
     book_data =  book.model_dump()
-    books_db.routerend(book_data)
+    books_db.append(book_data)
     return {
         "message" : "Book added successfully" ,
         "book_details" : book_data ,

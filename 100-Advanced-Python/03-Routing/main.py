@@ -10,10 +10,8 @@ async def health_check():
         "message" : "Health is fine!"
     }
 
-# connecting the router 
 app.include_router(
-    books.router , 
-    prefix="/api/v2" , 
-    tags = ["Books"]
+    books.router ,
+    prefix="api/v2" ,
+    tags=["Books"]
 )
-
