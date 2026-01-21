@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI , Depends
 from routers import books
 
 
@@ -12,6 +12,6 @@ async def health_check():
 
 app.include_router(
     books.router ,
-    prefix="api/v2" ,
+    prefix="/api/v2" ,
     tags=["Books"]
 )

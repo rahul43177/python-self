@@ -1,4 +1,4 @@
-from fastapi import APIRouter , HTTPException
+from fastapi import APIRouter , HTTPException , Depends
 from schemas import Book
 router = APIRouter()
 
@@ -17,7 +17,20 @@ books_db = [
         "price": 499
     }
 ]
+def pagination_params(
+        skip : int = 0 ,
+        limit : int = 100
+):
+    return {
+        "skip" : skip ,
+        "limit" : limit
+    }
 
+@router.get("/items")
+async def read_items(params : dict = Depends(pagination_params)):
+    return {
+        "params" : params
+    }
 
 @router.get("/books/search")
 async def search_books(genre : str , pages : int | None = None ):
