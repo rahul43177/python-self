@@ -1,9 +1,40 @@
 """
 Instructions
+- A gambling machine was invented in Brooklyn around 1891. Players would insert a nickel and pull a lever. If it's a good poker hand, you win a free beer. Soon, many bars in the city had it. This was a precursor to the modern slot machine.
+- Create a slot_machine.py program using random.
+- The items are symbols of common fruits and sevens (7️⃣). In each round, the slot machine displays three random items. - If there are three sevens, you win!
 
-A gambling machine was invented in Brooklyn around 1891. Players would insert a nickel and pull a lever. If it's a good poker hand, you win a free beer. Soon, many bars in the city had it. This was a precursor to the modern slot machine.
+Create a symbols list and include the following items: '🍒',' 🍇', '🍉', '7️⃣'.
 
-Create a slot_machine.py program using random.
+Next, create a results variable that uses the .choices() method from the random module and get three random symbols. Make sure to import the required module at the top of the file!
 
-The items are symbols of common fruits and sevens (7️⃣). In each round, the slot machine displays three random items. If there are three sevens, you win!
+Then, print each value from results, separated by | pipe characters:"
+🍉 | 🍒 | 🍇
+Lastly, use an if/else statement:
+
+    If all of the list items in results are equal to '7️⃣', print "Jackpot! 💰".
+    Else, print "Thanks for playing!".
+
+Bonus:
+
+    Rewrite this program with a play() function.
+    Add a while loop for the player to keep playing, round after round.
+    Ask the player for a 'Y' or 'N' input to keep playing with input().
+
 """
+import random
+
+symbols = ['🍒',' 🍇', '🍉', '7️⃣']
+
+results = random.choices(symbols , k=3)
+
+print(f"{results[0]} | {results[1]} | {results[2]}")
+
+unique = set(results)
+if len(unique) == 1:
+    print(f"Jackpot! 💰")
+elif len(unique) == 2:
+    print(f"So Close! Try again!")
+else :
+    print(f"Better Luck next time!")
+
