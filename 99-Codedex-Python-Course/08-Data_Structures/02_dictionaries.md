@@ -1,0 +1,64 @@
+# Dictionaries
+
+Let's explore another data structure in Python: dictionaries!
+
+Dictionaries are ordered collections that store and access data using key:value pairs.
+
+Python dictionaries use curly braces { } with comma-separated key:value pairs:
+
+dictionary = {
+  key1: value1,
+  key2: value2,
+  key3: value3
+}
+
+With lists and tuples, we access their items by index. But with dictionaries, we access their items by key. 🔑
+
+laptop = {
+  'brand': 'Apple',
+  'model': 'Macbook Pro',
+  'size': 14,
+  'year': 2023
+}
+
+Each key in a dictionary must be unique and associated with a specific value. This pairing allows for efficient retrieval of data. Keys must also be immutable, such as a string.
+
+To access the value associated with a specific key in a dictionary, we use [ ] brackets with the key inside.
+
+print(laptop['model'])
+# Output: Macbook Pro
+
+Consider a scenario where we are managing a database of artifacts or people, each with unique information.
+
+Let's define a dictionary!
+
+# Creating a dictionary
+student_info = {'name': 'Alice', 'age': 9, 'grade': 'A'}
+
+# Accessing dictionary elements
+print('Name:', student_info['name'])
+print('Age:', student_info['age'])
+print('Grade:', student_info['grade'])
+
+# Modifying dictionary elements
+student_info['age'] = 10
+print('Updated Age:', student_info['age'])
+
+# Dictionary Methods
+
+Dictionaries come equipped with various methods to streamline common tasks. This includes .keys(), .values(), and .items():
+
+# Dictionary methods
+print('Keys:', student_info.keys())
+print('Values:', student_info.values())
+print('Items:', student_info.items())
+
+This prints the following:
+
+Keys: dict_keys(['name', 'age', 'grade'])
+Values: dict_values(['Alice', 9, 'A'])
+Items: dict_items([('name', 'Alice'), ('age', 9), ('grade', 'A')])
+
+    .keys() returns just the keys from a dictionary.
+    .values() returns just the values.
+    .items() returns a list of the key-value pairs as tuples.
